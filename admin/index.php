@@ -13,15 +13,31 @@
   </tr>
   <tr>
     <td align="left" valign="top"><ul>
+      <li><a href="index.php">Home</a></li>
       <li>Categoria</li>
-      <li>Cidade</li>
+      <li><a href="index.php?tabela=cidade">Cidade</a></li>
       <li>Clientes</li>
       <li>Fornecedor</li>
       <li>Pedidos</li>
       <li>Produtos</li>
       <li>Promo&ccedil;&atilde;o</li>
     </ul></td>
-    <td>&nbsp;</td>
+    <td align="center" valign="top">
+	<?php
+			//$tabela = $_REQUEST['tabela'];
+			
+			if (isset($_REQUEST['tabela']))
+   				$tabela = $_REQUEST['tabela'];
+			else
+			   $tabela = null;
+			
+			if($tabela == "cidade")
+				require('cidade_lista.php');
+			else
+				require('principal.php');
+	
+	?>
+	</td>
   </tr>
   <tr>
     <td colspan="2"><div align="center">Loja Virtual - Budega Online </div></td>
