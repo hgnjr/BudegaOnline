@@ -9,12 +9,12 @@
 	 
 	 if($acao == 'listar')
 	 {
-    	 $filtro = $_REQUEST['pesquisa'];
+    	 //$filtro = $_REQUEST['pesquisa'];
 	     //echo "filtro =  $filtro"; 
         $oquefazer->listar_cidade();
 		require('cidade_lista.php');
 	 }
-
+/*
 	 if($acao == 'excluir')
 	 {
 		$oquefazer->excluir();
@@ -47,5 +47,5 @@
 		require('cidade_lista.php');
 	 }
 
-	
+	*/
 ?>

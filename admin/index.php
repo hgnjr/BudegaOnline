@@ -15,7 +15,7 @@
     <td align="left" valign="top"><ul>
       <li><a href="index.php">Home</a></li>
       <li>Categoria</li>
-      <li><a href="index.php?tabela=cidade">Cidade</a></li>
+      <li><a href="index.php?tabela=cidade&acao=listar">Cidade</a></li>
       <li>Clientes</li>
       <li>Fornecedor</li>
       <li>Pedidos</li>
@@ -24,15 +24,21 @@
     </ul></td>
     <td align="center" valign="top">
 	<?php
-			//$tabela = $_REQUEST['tabela'];
+			require('../util/conecta.php');
 			
+						
 			if (isset($_REQUEST['tabela']))
    				$tabela = $_REQUEST['tabela'];
 			else
 			   $tabela = null;
+			   
+			if (isset($_REQUEST['acao']))
+   				$acao = $_REQUEST['acao'];
+			else
+  				$acao = null;
 			
 			if($tabela == "cidade")
-				require('cidade_lista.php');
+				require('cidade_acao.php');
 			else
 				require('principal.php');
 	

@@ -11,7 +11,7 @@
 	   }       
 	   function listar_cidade()
 	   {
-		    $ordenacao = $_REQUEST['ordem'];
+		   /* $ordenacao = $_REQUEST['ordem'];
 			if ($ordenacao == '')
 			   $ordenacao = "CID_DESCRICAO";
 
@@ -20,13 +20,13 @@
 			    $filtrar_por == '';
 	 		else
 			   $filtrar_por = $filtro;
-
+*/
 			   
-			$sql = "select * from tbl_cidade where CID_DESCRICAO like '".$filtrar_por."%' order by ".$ordenacao;
+			$sql = "select * from tbl_cidade";
             $this->resultado = $this->con->banco->Execute($sql); 	   
 	   }
 	   
-	   function excluir()	   
+	 /*  function excluir()	   
 	   {
 
 		   	$sql = "delete from tbl_cidade where CID_CODIGO = ".$_REQUEST['codigo'];
@@ -79,6 +79,6 @@
 		    return $this->registros->TOTAL;
 	   }
 
-	   
+	*/   
    }
 ?>

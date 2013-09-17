@@ -17,27 +17,28 @@
   </tr>
   <?php
 
-    require('../util/conecta.php');
 	
-	$sql = "select * from tbl_cidade";
+	//$sql = "select * from tbl_cidade";
 	
-	$resultado = $con->banco->Execute($sql); 
+	//$resultado = $con->banco->Execute($sql); 
 	
-	while(!$resultado->EOF)
+	//while(!$resultado->EOF)
+	while($oquefazer->registros = $oquefazer->resultado->FetchNextObject())
+	
 	{
 	    //echo "cidade = " . $resultado->Fields('CID_DESCRICAO')."<br>";	
 
-
+	/*<td><?php echo $resultado->Fields('CID_DESCRICAO');?></td>
+    <td><?php echo $resultado->Fields('CID_UF');?></td>*/
 ?>
   <tr>
-    <td><?php echo $resultado->Fields('CID_DESCRICAO');?></td>
-    <td><?php echo $resultado->Fields('CID_UF');?></td>
+    <td><?php echo $oquefazer->registros->CID_DESCRICAO;?>
+	<td><?php echo $oquefazer->registros->CID_UF;?></td>
     <td align="center">Alterar</td>
     <td align="center">Excluir</td>
   </tr>
   
   <?php 
-  		$resultado->MoveNext();
   
   } ?>
   <tr>
