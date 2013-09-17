@@ -26,7 +26,7 @@
             $this->resultado = $this->con->banco->Execute($sql); 	   
 	   }
 	   
-	 /*  function excluir()	   
+	   function excluir()	   
 	   {
 
 		   	$sql = "delete from tbl_cidade where CID_CODIGO = ".$_REQUEST['codigo'];
@@ -42,7 +42,8 @@
 			}	   
 	   }
 	   
-   	   function gravar_incluir()
+   	
+	   function gravar_incluir()
 	   {
 		   	$sql = "insert into tbl_cidade (CID_DESCRICAO, CID_UF) values ('".$_REQUEST['CID_DESCRICAO']."','".											                     $_REQUEST['CID_UF']."')";
         	if($this->resultado = $this->con->banco->Execute($sql))
@@ -58,8 +59,8 @@
 
 	   }
        
-  
-   	   function alterar()
+ 
+ function alterar()
 	   {
 		   	$sql = "select * from tbl_cidade where CID_CODIGO = ".$_REQUEST['codigo'];
             $this->resultado = $this->con->banco->Execute($sql); 
@@ -77,8 +78,6 @@
             $this->resultado = $this->con->banco->Execute($sql); 
 			$this->registros = $this->resultado->FetchNextObject(); //se posiciona no registro
 		    return $this->registros->TOTAL;
-	   }
-
-	*/   
+	   }  
    }
 ?>

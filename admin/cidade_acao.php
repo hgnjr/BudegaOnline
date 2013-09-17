@@ -14,7 +14,7 @@
         $oquefazer->listar_cidade();
 		require('cidade_lista.php');
 	 }
-/*
+
 	 if($acao == 'excluir')
 	 {
 		$oquefazer->excluir();
@@ -37,7 +37,7 @@
 	 if($acao == 'alterar')
 	 {
 		$oquefazer->alterar();
-		require('cidade_form.php');
+		require('cidade_form_alterar.php');
 	 }
 
 	 if($acao == 'gravar_alterar')
@@ -47,5 +47,5 @@
 		require('cidade_lista.php');
 	 }
 
-	*/
+
 ?>

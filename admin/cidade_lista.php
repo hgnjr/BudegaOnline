@@ -13,7 +13,7 @@
   <tr>
     <td align="center">Descri&ccedil;&atilde;o</td>
     <td align="center">UF</td>
-    <td colspan="2" align="center">Novo Registro </td>
+    <td colspan="2" align="center"><a href="index.php?tabela=cidade&acao=incluir">Novo Registro</a> </td>
   </tr>
   <?php
 
@@ -34,8 +34,8 @@
   <tr>
     <td><?php echo $oquefazer->registros->CID_DESCRICAO;?>
 	<td><?php echo $oquefazer->registros->CID_UF;?></td>
-    <td align="center">Alterar</td>
-    <td align="center">Excluir</td>
+    <td align="center"><a href="index.php?tabela=cidade&acao=alterar&codigo=<?php echo $oquefazer->registros->CID_CODIGO;?>">Alterar</a></td>
+    <td align="center"><a href="index.php?tabela=cidade&acao=excluir&codigo=<?php echo $oquefazer->registros->CID_CODIGO;?>">Excluir</a></td>
   </tr>
   
   <?php 
