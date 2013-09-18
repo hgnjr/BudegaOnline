@@ -1,6 +1,6 @@
 <link href="../util/estilos.css" rel="stylesheet" type="text/css"/>
 
-<table width="753" border="1px" class="borda_tabela" cellspacing="2">
+<table width="550" border="1px" class="borda_tabela" cellspacing="2">
   <tr class="titulos_lista_pesquisa">
     <td colspan="4" align="center"><h2 align="center"> Lista de Cidades</h2>
       <form id="form_pesquisa" name="form_pesquisa" method="post" action="index.php?tabela=cidade&acao=listar">
@@ -14,7 +14,7 @@
       </form></td>
   </tr>
   <tr class="ordenacao_novo_registro">
-    <td width="414"><a href="index.php?tabela=cidade&acao=listar&ordem=CID_DESCRICAO">Descrição</td>
+    <td width="414"><a href="index.php?tabela=cidade&acao=listar&ordem=CID_DESCRICAO">Descri&ccedil;&atilde;o</td>
     <td width="87"><a href="index.php?tabela=cidade&acao=listar&ordem=CID_UF">UF</td>
     <td colspan="2"><a href="index.php?tabela=cidade&acao=incluir">Novo Registro</a></td>
   </tr>
@@ -29,7 +29,7 @@
                 <td class="itens_tabela_banco"><?php echo $oquefazer->registros->CID_UF;?></td>
                 <td class="alterar_excluir" onMouseOver="this.className='alterar_excluir_over';"  onMouseOut="this.className='alterar_excluir';" width="73"><a href="index.php?tabela=cidade&acao=alterar&codigo=<?php echo $oquefazer->registros->CID_CODIGO;?>">Alterar</a></td>
                <td class="alterar_excluir" onMouseOver="this.className='alterar_excluir_over';"  onMouseOut="this.className='alterar_excluir';" width="104"><a href="javascript:if(confirm('Deseja excluir esse registro ?')) {location='index.php?tabela=cidade&acao=excluir&codigo=<?php echo $oquefazer->registros->CID_CODIGO;?>';}">Excluir</a></td>
-             </tr>
+  </tr>
 <?php 
 	} ?>         
   <tr class="titulos_lista_pesquisa">

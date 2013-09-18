@@ -8,7 +8,7 @@
 <body>
 <p><?php
 
-echo "Seja bem vindo a área administrativa do site!";
+
 
 ?></p>
 </body>

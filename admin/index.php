@@ -2,28 +2,37 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-</head>
+<title>BudegaOnline</title>
+<link href="../util/estilos.css" rel="stylesheet" type="text/css" />
 
-<body>
-<table width="646" align="center">
-  <tr>
-    <td width="135"><img src="../imagens/LOGObudega.png" width="125" height="47" /></td>
-    <td width="499"><div align="center">Administra&ccedil;&atilde;o Loja Virtual Budega Online </div></td>
-  </tr>
-  <tr>
-    <td align="left" valign="top"><ul>
-      <li><a href="index.php">Home</a></li>
-      <li>Categoria</li>
-      <li><a href="index.php?tabela=cidade&acao=listar">Cidade</a></li>
-      <li>Clientes</li>
-      <li>Fornecedor</li>
-      <li>Pedidos</li>
-      <li>Produtos</li>
-      <li>Promo&ccedil;&atilde;o</li>
-    </ul></td>
-    <td align="center" valign="top">
-	<?php
+      </head>
+      
+      <body>
+      <table width="837" border="0" align="center" cellpadding="5" cellspacing="5">
+        <tr>
+          <td align="left" valign="top" class="titulo_sistema"><img src="../imagens/ImagensBudegaOnline.png" width="207" height="86" /><br />          </td>
+          <td align="left" valign="top" class="titulo_sistema"><div align="right">Administra&ccedil;&atilde;o</div></td>
+        </tr>
+        <tr>
+          <td width="109" align="left" valign="top"><p class="menu"><a href="index.php"  onmouseover="this.className='menu_over';" onmouseout="this.className='menu';">Home</a><br />
+            <a href="index.php?tabela=categoria&acao=listar"  onmouseover="this.className='menu_over';" onmouseout="this.className='menu';">Categoria</a><br />
+            <a href="index.php?tabela=cidade&acao=listar"  onmouseover="this.className='menu_over';" onmouseout="this.className='menu';">Cidade</a><br />
+            Clientes
+            <br />
+            <a href="index.php?tabela=fornecedor&acao=listar" onmouseover="this.className='menu_over';" onmouseout="this.className='menu';">Fornecedor</a><br />
+              Pedidos
+              <br />
+            <a href="index.php?tabela=produto&acao=listar" onmouseover="this.className='menu_over';" onmouseout="this.className='menu';">Produtos</a><br />
+              Promocao<br />
+              <a href="index.php?tabela=usuario&acao=listar" onmouseover="this.className='menu_over';" onmouseout="this.className='menu';">Usuario</a>
+              <br />
+              <a href="logoff.php">Saida</a><br />
+          </p></td>
+          <td width="693" align="center" valign="top">
+
+<div align="left"></div>
+<p>&nbsp;</p>
+<?php
 			require('../util/conecta.php');
 			
 						
@@ -39,17 +48,18 @@
 			
 			if($tabela == "cidade")
 				require('cidade_acao.php');
+			if($tabela == "categoria")
+				require('categoria_acao.php');
 			else
 				require('principal.php');
 				
 				
 				
 	
-	?>
-	</td>
+	?></td>
   </tr>
   <tr>
-    <td colspan="2"><div align="center">Loja Virtual - Budega Online </div></td>
+    <td colspan="2"><div align="center"><span class="titulo_sistema">Loja Virtual - BudegaOnline </span></div></td>
   </tr>
 </table>
 </body>
