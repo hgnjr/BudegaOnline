@@ -12,7 +12,7 @@
     <table width="550" border="1" cellpadding="5" cellspacing="5" class="borda_tabela">
       <tr>
         <td colspan="2"><div align="center">
-          <h1 class="titulos_lista_pesquisa">Manutencao de Usuario</h1>
+          <h1 class="titulos_lista_pesquisa">Manuten&ccedil;&atilde;o de Usuario</h1>
         </div></td>
       </tr>
       <tr>
