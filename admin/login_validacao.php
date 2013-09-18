@@ -5,8 +5,31 @@
 	{
 	   //echo "ok, digitou usuario e senha";
 	   require('../util/conecta.php');
-	   $sql = "select * from tbl_usuario where USU_LOGIN = '".($_POST['usu_login'])."' and USU_SENHA = '".base64_encode($_POST['usu_senha'])."'";
-
+	   
+       $texto_senha = $_POST['usu_senha'];
+	   
+	   $tamanho_senha = strlen($texto_senha);
+	   //alerta($tamanho_senha);
+	   if ($tamanho_senha > 8)
+	   {
+	      alerta("senha não pode ter mais de 8 caracteres");
+		  voltar();
+		  exit;
+	   }
+	   
+	   $texto_senha = trim($texto_senha);
+	          $texto_senha = str_replace("=","",$texto_senha);
+	   $texto_senha = str_replace("*","",$texto_senha);
+	   $texto_senha = str_replace("drop","",$texto_senha);	   
+	   $texto_senha = str_replace("insert","",$texto_senha);
+	   $texto_senha = str_replace("--","",$texto_senha);	   
+   	   $texto_senha = str_replace("'","",$texto_senha);
+	   $texto_senha = str_replace(" or ","",$texto_senha);	   
+	   $texto_senha = str_replace("delete","",$texto_senha);	   
+  	   $texto_senha = addslashes($texto_senha);
+	   
+	   $sql = "select * from tbl_usuario where USU_LOGIN = '".addslashes($_POST['usu_login'])."' and USU_SENHA = '".($texto_senha)."'";
+	   //alerta($sql);
 	   $resultado = $con->banco->Execute($sql);
 	   if($registro = $resultado->FetchNextObject())
 	   {
