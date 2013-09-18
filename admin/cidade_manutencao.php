@@ -11,7 +11,7 @@
 	   }       
 	   function listar_cidade()
 	   {
-		   /* $ordenacao = $_REQUEST['ordem'];
+		    $ordenacao = $_REQUEST['ordem'];
 			if ($ordenacao == '')
 			   $ordenacao = "CID_DESCRICAO";
 
@@ -20,9 +20,9 @@
 			    $filtrar_por == '';
 	 		else
 			   $filtrar_por = $filtro;
-*/
+
 			   
-			$sql = "select * from tbl_cidade";
+			$sql = "select * from tbl_cidade where CID_DESCRICAO like '".$filtrar_por."%' order by ".$ordenacao;
             $this->resultado = $this->con->banco->Execute($sql); 	   
 	   }
 	   
@@ -42,8 +42,7 @@
 			}	   
 	   }
 	   
-   	
-	   function gravar_incluir()
+   	   function gravar_incluir()
 	   {
 		   	$sql = "insert into tbl_cidade (CID_DESCRICAO, CID_UF) values ('".$_REQUEST['CID_DESCRICAO']."','".											                     $_REQUEST['CID_UF']."')";
         	if($this->resultado = $this->con->banco->Execute($sql))
@@ -59,8 +58,8 @@
 
 	   }
        
- 
- function alterar()
+  
+   	   function alterar()
 	   {
 		   	$sql = "select * from tbl_cidade where CID_CODIGO = ".$_REQUEST['codigo'];
             $this->resultado = $this->con->banco->Execute($sql); 
@@ -78,6 +77,8 @@
             $this->resultado = $this->con->banco->Execute($sql); 
 			$this->registros = $this->resultado->FetchNextObject(); //se posiciona no registro
 		    return $this->registros->TOTAL;
-	   }  
+	   }
+
+	   
    }
 ?>

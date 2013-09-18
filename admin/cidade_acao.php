@@ -9,20 +9,20 @@
 	 
 	 if($acao == 'listar')
 	 {
-    	 //$filtro = $_REQUEST['pesquisa'];
+    	 @$filtro = $_REQUEST['pesquisa'];
 	     //echo "filtro =  $filtro"; 
-        $oquefazer->listar_cidade();
+        @$oquefazer->listar_cidade();
 		require('cidade_lista.php');
 	 }
 
-	 if($acao == 'excluir')
+	 if(@$acao == 'excluir')
 	 {
-		$oquefazer->excluir();
+		@$oquefazer->excluir();
 		$oquefazer->listar_cidade();
 		require('cidade_lista.php');
 	 }
 	 
-	 if($acao == 'incluir')
+	 if(@$acao == 'incluir')
 	 {
 		require('cidade_form.php');
 	 }
@@ -47,5 +47,5 @@
 		require('cidade_lista.php');
 	 }
 
-
+	
 ?>

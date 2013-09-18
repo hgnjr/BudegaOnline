@@ -1,50 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-</head>
+<link href="../util/estilos.css" rel="stylesheet" type="text/css"/>
 
-<body>
-<table width="500" border="1">
-  <tr>
-    <td colspan="4" align="center">Lista de Cidades </td>
+<table width="753" border="1px" class="borda_tabela" cellspacing="2">
+  <tr class="titulos_lista_pesquisa">
+    <td colspan="4" align="center"><h2 align="center"> Lista de Cidades</h2>
+      <form id="form_pesquisa" name="form_pesquisa" method="post" action="index.php?tabela=cidade&acao=listar">
+        <label>
+          Pesquisa.:
+          <input name="pesquisa" type="text" id="pesquisa" size="50" />
+        </label>
+        <label>
+          <input type="submit" name="button" id="button" value="Pesquisar" />
+        </label>
+      </form></td>
   </tr>
-  <tr>
-    <td align="center">Descri&ccedil;&atilde;o</td>
-    <td align="center">UF</td>
-    <td colspan="2" align="center"><a href="index.php?tabela=cidade&acao=incluir">Novo Registro</a> </td>
+  <tr class="ordenacao_novo_registro">
+    <td width="414"><a href="index.php?tabela=cidade&acao=listar&ordem=CID_DESCRICAO">Descrição</td>
+    <td width="87"><a href="index.php?tabela=cidade&acao=listar&ordem=CID_UF">UF</td>
+    <td colspan="2"><a href="index.php?tabela=cidade&acao=incluir">Novo Registro</a></td>
   </tr>
   <?php
 
 	
-	//$sql = "select * from tbl_cidade";
-	
-	//$resultado = $con->banco->Execute($sql); 
-	
-	//while(!$resultado->EOF)
 	while($oquefazer->registros = $oquefazer->resultado->FetchNextObject())
-	
 	{
-	    //echo "cidade = " . $resultado->Fields('CID_DESCRICAO')."<br>";	
-
-	/*<td><?php echo $resultado->Fields('CID_DESCRICAO');?></td>
-    <td><?php echo $resultado->Fields('CID_UF');?></td>*/
-?>
-  <tr>
-    <td><?php echo $oquefazer->registros->CID_DESCRICAO;?>
-	<td><?php echo $oquefazer->registros->CID_UF;?></td>
-    <td align="center"><a href="index.php?tabela=cidade&acao=alterar&codigo=<?php echo $oquefazer->registros->CID_CODIGO;?>">Alterar</a></td>
-    <td align="center"><a href="index.php?tabela=cidade&acao=excluir&codigo=<?php echo $oquefazer->registros->CID_CODIGO;?>">Excluir</a></td>
+    ?>
+            <tr  onmouseover="muda_cor_over(this)" onmouseout="muda_cor_out(this)">
+                <td  class="itens_tabela_banco"><?php echo $oquefazer->registros->CID_DESCRICAO;?></td>
+                <td class="itens_tabela_banco"><?php echo $oquefazer->registros->CID_UF;?></td>
+                <td class="alterar_excluir" onMouseOver="this.className='alterar_excluir_over';"  onMouseOut="this.className='alterar_excluir';" width="73"><a href="index.php?tabela=cidade&acao=alterar&codigo=<?php echo $oquefazer->registros->CID_CODIGO;?>">Alterar</a></td>
+               <td class="alterar_excluir" onMouseOver="this.className='alterar_excluir_over';"  onMouseOut="this.className='alterar_excluir';" width="104"><a href="javascript:if(confirm('Deseja excluir esse registro ?')) {location='index.php?tabela=cidade&acao=excluir&codigo=<?php echo $oquefazer->registros->CID_CODIGO;?>';}">Excluir</a></td>
+             </tr>
+<?php 
+	} ?>         
+  <tr class="titulos_lista_pesquisa">
+    <td colspan="4"><p align="center">Numero de registros: <?php echo $oquefazer->total_registros();?></p>
+    </td>
   </tr>
-  
-  <?php 
-  
-  } ?>
-  <tr>
-    <td colspan="4" align="center">Budega Online </td>
-  </tr>
-  
 </table>
-</body>
-</html>
