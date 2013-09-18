@@ -1,3 +1,17 @@
+<?php
+     session_start(); 
+	   
+	 if(!$_SESSION['sessao_codigo_usuario'])
+	 {
+		 require('../util/funcoes.php');  
+		 direciona('login_form.php');
+		 exit;
+	 }
+	 else
+	 { 
+	 ?>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -46,10 +60,12 @@
 			else
   				$acao = null;
 			
-			if($tabela == "cidade")
-				require('cidade_acao.php');
-			if($tabela == "categoria")
-				require('categoria_acao.php');
+                 if($tabela == "cidade")
+                   require('cidade_acao.php'); 
+                 else if($tabela == "categoria")
+                   require('categoria_acao.php'); 
+                 else if($tabela == "usuario")
+                   require('usuario_acao.php');
 			else
 				require('principal.php');
 				
@@ -64,3 +80,4 @@
 </table>
 </body>
 </html>
+<?php } ?>   

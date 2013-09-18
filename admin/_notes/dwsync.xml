@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="index.php" local="130239025764970809" remote="130239025760000000" testing="130239025760000000" />
-<file name="principal.php" local="130238679223454178" remote="130238679220000000" testing="130238679220000000" />
-<file name="cidade_manutencao.php" local="130239347959839301" remote="130239347950000000" testing="130239347950000000" />
-<file name="cidade_lista.php" local="130239347959559285" remote="130239347950000000" testing="130239347950000000" />
-<file name="cidade_acao.php" local="130239343914377914" remote="130239343910000000" testing="130239343910000000" />
+<file name="principal.php" local="130239512656738094" remote="130239512650000000" testing="130239512650000000" />
+<file name="cidade_manutencao.php" local="130239468459150136" remote="130239468450000000" testing="130239468450000000" />
+<file name="cidade_lista.php" local="130239470989334855" remote="130239470980000000" testing="130239470980000000" />
+<file name="cidade_acao.php" local="130239468081578541" remote="130239468080000000" testing="130239468080000000" />
+<file name="categoria_acao.php" local="130239455144968609" remote="130239455140000000" testing="130239455140000000" />
+<file name="categoria_form.php" local="130239457672693186" remote="130239457670000000" testing="130239457670000000" />
+<file name="categoria_lista.php" local="130239459087694120" remote="130239459080000000" testing="130239459080000000" />
+<file name="categoria_manutencao.php" local="130239455144868603" remote="130239455140000000" testing="130239455140000000" />
+<file name="cidade_form.php" local="130239480340799728" remote="130239480340000000" testing="130239480340000000" />
+<file name="usuario_acao.php" local="130239486825420627" remote="130239486820000000" testing="130239486820000000" />
+<file name="usuario_form.php" local="130239486281779533" remote="130239486280000000" testing="130239486280000000" />
+<file name="usuario_lista.php" local="130239486281929541" remote="130239486280000000" testing="130239486280000000" />
+<file name="usuario_manutencao.php" local="130239484687338336" remote="130239484680000000" testing="130239484680000000" />
+<file name="login_form.php" local="129054560838750000" remote="129054560830000000" testing="129054560830000000" />
+<file name="login_validacao.php" local="130239563798673245" remote="130239563790000000" testing="130239563790000000" />
+<file name="index.php" local="130239573202101091" remote="130239573200000000" testing="130239573200000000" />
 </dwsync>

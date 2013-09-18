@@ -12,44 +12,47 @@
     <table width="550" border="1" cellpadding="5" cellspacing="5" class="borda_tabela">
       <tr>
         <td colspan="2"><div align="center">
-          <h1 class="titulos_lista_pesquisa">Manutencao de Cidades</h1>
+          <h1 class="titulos_lista_pesquisa">Manutencao de Usuario</h1>
         </div></td>
       </tr>
       <tr>
         <td width="99">Nome</td>
         <td width="360"><label>
-          <input name="CID_DESCRICAO" type="text" id="CID_DESCRICAO" size="40" 
-          value="<?php echo @$oquefazer->registros->CID_DESCRICAO;?>" />
+          <input name="usu_nome" type="text" id="usu_nome" size="40" 
+          value="<?php echo @$oquefazer->registros->USU_NOME;?>" />
         </label></td>
       </tr>
       <tr>
-        <td>UF</td>
+        <td>Login</td>
         <td><label>
-          <select name="CID_UF" id="CID_UF">
-          <?php
-		       $estado1 = '';
-		       $estado2 = '';
-		       $estado3 = '';
-		       $estado4 = '';
-		       $estado5 = '';	
-   		       $estado6 = '';
-			   switch(@$oquefazer->registros->CID_UF)
+          <input name="usu_login" type="text" id="usu_login" size="15"
+          value="<?php echo @$oquefazer->registros->USU_LOGIN;?>" />
+        </label></td>
+      </tr>
+      <tr>
+        <td>Senha</td>
+        <td><label>
+          <input name="usu_senha" type="password" id="usu_senha" size="15"
+          value="<?php echo @$oquefazer->registros->USU_SENHA;?>" />
+        </label></td>
+      </tr>
+      <tr>
+        <td>Nivel</td>
+        <td><label>
+          <select name="usu_nivel" id="usu_nivel">
+         <?php
+		       $usu1 = '';
+		       $usu2 = '';
+			   switch(@$oquefazer->registros->USU_NIVEL)
 			   {
-				   case 'SC': $estado1 = 'selected';break; 
-				   case 'PR': $estado2 = 'selected';break;
-				   case 'RS': $estado3 = 'selected';break; 
-				   case 'TO': $estado4 = 'selected';break; 
-				   case 'SP': $estado5 = 'selected';break; 
-				   case 'RJ': $estado6 = 'selected';break; 				   
+				   case 'A': $usu1 = 'selected';break; 
+				   case 'L': $usu2 = 'selected';break;
 			   }
 		  ?>
-            <option value="SC" <?php echo $estado1;?>>SC</option>
-            <option value="PR" <?php echo $estado2;?>>PR</option>
-            <option value="RS" <?php echo $estado3;?>>RS</option>
-            <option value="TO" <?php echo $estado4;?>>TO</option>
-            <option value="SP" <?php echo $estado5;?>>SP</option>
-            <option value="RJ" <?php echo $estado6;?>>RJ</option>
-          </select>
+            <option value="A" <?php echo $usu1;?>>Administrador</option>
+            <option value="L" <?php echo $usu2;?>>Leitura</option>
+
+</select>
         </label></td>
       </tr>
       <tr>
@@ -58,9 +61,9 @@
           <input type="reset" name="button2" id="button2" value="Limpar" />
           <input type="button" name="button3" id="button3" value="Cancelar" />
         </label>
-        <input type="hidden" name="tabela" value="cidade" />
+        <input type="hidden" name="tabela" value="usuario" />
         <input type="hidden" name="acao" value="<?php echo 'gravar_'.$acao?>"/>        
-        <input type="hidden" name="codigo" value="<?php echo @$oquefazer->registros->CID_CODIGO;?>" />                
+        <input type="hidden" name="codigo" value="<?php echo @$oquefazer->registros->USU_CODIGO;?>" />                
         </td>
       </tr>
       <tr>
